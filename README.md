@@ -1,5 +1,9 @@
 # PomodoroTimer
 
+Simple Pomodoro timer with option to set work/break duration and statistics of finished sessions.
+
+Demo: https://i-chornyi.github.io/pomodoro-timer/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
 
 ## Development server
