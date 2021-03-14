@@ -1,0 +1,21 @@
+.actions {
+  margin-top: 40px;
+}
+
+.sessions {
+  display: grid;
+  gap: 10px 20px;
+  width: 300px;
+  margin-top: 70px;
+  height: 40px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.session {
+  height: 2px;
+  background-color: var(--color-grey);
+
+  &.success {
+    background-color: var(--color-primary);
+  }
+}
