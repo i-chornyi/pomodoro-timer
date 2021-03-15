@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TimerMode } from '../models/settings.model';
 
 @Component({
@@ -133,5 +133,22 @@ export class TimerComponent implements OnInit, OnChanges {
    */
   playNotificationSound(): void {
     this.audio.play();
+  }
+
+  /**
+   * Change state of the counter to the opposite: start/pause
+   */
+  toggleCounter(): void {
+    this.isCounting ? this.pauseTimer() : this.startTimer();
+  }
+
+  /**
+   * Listen for the Space key press to start/pause the counter
+   */
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.code === 'Space') {
+      this.toggleCounter();
+    }
   }
 }
